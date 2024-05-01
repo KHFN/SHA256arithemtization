@@ -106,7 +106,7 @@ void commitAndAppend(KZG& PCS, polyff elem, vector<G1>& out, string& transcript,
 }
 
 using namespace std;
-int main() {
+int main(int argc, char* argv[]) {
 
     MCL_init();
 
