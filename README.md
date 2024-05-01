@@ -96,7 +96,10 @@ Termux는 Android 기기에서 리눅스 환경을 제공하는 앱입니다. �
 
    ```bash
    cd mcl
-   make -j4 CXX=clang++
+   mkdir build
+   cd build
+   cmake .. -DCMAKE_CXX_COMPILER=clang++
+   make
    ```
 
    `-j4` 옵션은 가능한 경우 멀티 코어를 사용하여 빌드 속도를 향상시킵니다. 하지만 기기의 성능에 따라 조정이 필요할 수 있습니다.
