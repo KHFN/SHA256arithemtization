@@ -146,6 +146,9 @@ int main(int argc, char* argv[]) {
     time += b;
     A.excutiontrace.data.resize(domain_size,{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
     A.init_table("tablecsv_backup.csv");
+    if (argc > 1 && std::string(argv[1]) == "1") {
+        std::cout << A.excutiontrace << std::endl;
+    }
 
     auto end_trace = chrono::high_resolution_clock::now();
     cout << "실행추적 생성 소요시간 : " << duration_cast<milliseconds>(end_trace - checkpoint).count() << " 밀리초\n";
