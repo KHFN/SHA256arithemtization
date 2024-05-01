@@ -109,7 +109,7 @@ Termux는 Android 기기에서 리눅스 환경을 제공하는 앱입니다. �
 빌드가 완료된 후, `arithmetization` 디렉토리로 돌아가 `main.cpp` 파일을 컴파일하고 실행 파일을 생성합니다:
 
 ```bash
-cd ../arithmetization
+cd ../../arithmetization
 clang++ -o main_fast main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rpath,../mcl/lib -Ofast
 ./main_fast
 ```
