@@ -100,6 +100,7 @@ Termux는 Android 기기에서 리눅스 환경을 제공하는 앱입니다. �
    cd build
    cmake .. -DCMAKE_CXX_COMPILER=clang++
    make
+   cp -r lib ../
    ```
 
 ### 프로젝트 실행
