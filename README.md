@@ -49,4 +49,64 @@ g++ -o main_fast main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rp
 ./main_fast
 ```
 
-이 프로젝트에 기여하고 싶다면, Pull Request나 Issue를 통해 커뮤니티에 참여할 수 있습니다. 모든 기여자는 코드를 보다 나은 방향으로 발전시키는 데 도움을 줄 수 있습니다.
+## Android 스마트폰에서 실행해보기
+
+Termux는 Android 기기에서 리눅스 환경을 제공하는 앱입니다. 이를 통해 GCC, Python 등 리눅스 기반 도구를 사용할 수 있습니다.
+
+### 필수 조건
+
+- Android 기기
+- Termux 앱 (F-Droid에서 다운로드 가능)
+
+### 설치 과정
+
+1. **Termux 설치**
+
+   Google Play Store 또는 F-Droid에서 Termux 앱을 설치합니다.
+
+2. **필수 패키지 업데이트 및 설치**
+
+   Termux를 열고 다음 명령으로 시스템을 업데이트하고 필요한 도구를 설치합니다:
+
+   ```bash
+   pkg update && pkg upgrade
+   pkg install git python clang make cmake -y
+   ```
+
+3. **리포지토리 복제**
+
+   다음 명령으로 프로젝트 리포지토리를 복제합니다:
+
+   ```bash
+   git clone https://github.com/KHFN/SHA256arithemtization.git
+   cd SHA256arithemtization
+   ```
+
+4. **서브모듈 초기화 및 업데이트**
+
+   프로젝트의 서브모듈을 초기화하고 업데이트합니다:
+
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+5. **mcl 라이브러리 빌드**
+
+   mcl 라이브러리를 빌드하기 전에 `CXX` 환경 변수를 `clang++`로 설정하여 `clang` 컴파일러를 사용합니다:
+
+   ```bash
+   cd mcl
+   make -j4 CXX=clang++
+   ```
+
+   `-j4` 옵션은 가능한 경우 멀티 코어를 사용하여 빌드 속도를 향상시킵니다. 하지만 기기의 성능에 따라 조정이 필요할 수 있습니다.
+
+### 프로젝트 실행
+
+빌드가 완료된 후, `arithmetization` 디렉토리로 돌아가 `main.cpp` 파일을 컴파일하고 실행 파일을 생성합니다:
+
+```bash
+cd ../arithmetization
+clang++ -o main_fast main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rpath,../mcl/lib -Ofast
+./main_fast
+```
