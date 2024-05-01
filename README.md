@@ -69,6 +69,7 @@ Termux는 Android 기기에서 리눅스 환경을 제공하는 앱입니다. �
    Termux를 열고 다음 명령으로 시스템을 업데이트하고 필요한 도구를 설치합니다:
 
    ```bash
+   cd ..
    pkg update && pkg upgrade
    pkg install git python clang make cmake -y
    ```
