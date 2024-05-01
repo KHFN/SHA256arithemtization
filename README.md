@@ -50,7 +50,3 @@ g++ -o main_fast main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rp
 ```
 
 이 프로젝트에 기여하고 싶다면, Pull Request나 Issue를 통해 커뮤니티에 참여할 수 있습니다. 모든 기여자는 코드를 보다 나은 방향으로 발전시키는 데 도움을 줄 수 있습니다.
-
-## 라이선스
-
-이 프로젝트는 MIT 라이선스를 따
