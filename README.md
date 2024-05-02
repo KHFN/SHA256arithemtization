@@ -40,10 +40,11 @@
 ### 실행
 
 빌드가 완료된 후, `arithmetization` 폴더 내의 `main.cpp` 파일을 컴파일하여 실행 파일을 생성합니다:
+(-O3는 생략가능)
 
 ```bash
 cd ../arithmetization
-g++ -o main_fast main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rpath,../mcl/lib -Ofast
+g++ -o main_fast main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rpath,../mcl/lib -O3
 ./main_fast
 ```
 
