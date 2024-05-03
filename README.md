@@ -44,8 +44,8 @@
 
 ```bash
 cd ../arithmetization
-g++ -o main_fast main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rpath,../mcl/lib -O3
-./main_fast
+g++ -o main1 main.cpp -I../mcl/include/ -L../mcl/lib -lmcl -lpthread -Wl,-rpath,../mcl/lib 
+./main1
 ```
 
 ## Android 스마트폰에서 실행해보기
